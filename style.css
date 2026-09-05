@@ -9,6 +9,8 @@
   --leaf-light:#E4EEE3;
   --rust:#A64B2A;
   --rust-light:#F3E2D8;
+  --amber:#C98A1F;
+  --amber-light:#FBF0D9;
   --slate:#6B6259;
   --line:#E4DACB;
   --card:#FFFFFF;
@@ -43,8 +45,20 @@ h1,h2,h3{font-family:'Roboto Slab',serif; margin:0;}
 .nav-btn.active{background:var(--wheat); color:var(--soil); font-weight:600;}
 .nav-dot{width:7px; height:7px; border-radius:50%; background:currentColor; opacity:.55;}
 
-/* Main */
-.main{flex:1; padding:36px 44px; max-width:980px;}
+/* Main wrap + topbar */
+.main-wrap{flex:1; display:flex; flex-direction:column;}
+.topbar{
+  display:flex; justify-content:flex-end; align-items:center; gap:8px;
+  padding:14px 44px 0; 
+}
+.topbar-globe{font-size:15px; opacity:.7;}
+.lang-select{
+  border:1.5px solid var(--line); border-radius:7px; padding:6px 10px;
+  font-family:'Work Sans',sans-serif; font-size:13px; font-weight:600; color:var(--soil);
+  background:var(--card); cursor:pointer;
+}
+
+.main{flex:1; padding:20px 44px 36px; max-width:980px;}
 .page-head{margin-bottom:26px;}
 .page-head h2{font-size:24px;}
 .page-head p{color:var(--slate); font-size:14.5px; margin-top:6px; max-width:60ch;}
@@ -69,7 +83,24 @@ h1,h2,h3{font-family:'Roboto Slab',serif; margin:0;}
 .center-opt:hover{border-color:var(--wheat-dark);}
 .center-opt.selected{border-color:var(--leaf); background:var(--leaf-light);}
 .center-opt strong{display:block; font-size:15px; margin-bottom:3px;}
-.center-opt span{font-size:12.5px; color:var(--slate);}
+.center-opt > span.dist{font-size:12.5px; color:var(--slate);}
+
+.center-meta-row{display:flex; align-items:center; gap:8px; margin-top:10px; flex-wrap:wrap;}
+.crop-tag{
+  font-size:11.5px; font-weight:600; background:var(--leaf-light); color:var(--leaf);
+  padding:3px 9px; border-radius:5px;
+}
+.congestion{
+  font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:5px;
+  display:inline-flex; align-items:center; gap:5px;
+}
+.congestion .dot{width:7px; height:7px; border-radius:50%; flex-shrink:0;}
+.cong-low{background:var(--leaf-light); color:var(--leaf);}
+.cong-low .dot{background:var(--leaf);}
+.cong-medium{background:var(--amber-light); color:var(--amber);}
+.cong-medium .dot{background:var(--amber);}
+.cong-high{background:var(--rust-light); color:var(--rust);}
+.cong-high .dot{background:var(--rust);}
 
 .slot-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:6px;}
 .slot{
