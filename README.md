@@ -10,3 +10,10 @@ We build this prototype for smart India hackathon . Where we firstly selected th
 <br>
 - SIH26032
 
+## Team members details
+- Shivankar(Team Leader)
+- Arpita
+- Aarav
+- Aparna
+- Palak
+- Sachin
