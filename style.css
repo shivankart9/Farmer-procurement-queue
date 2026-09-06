@@ -180,6 +180,111 @@ tr:hover td{background:#FBF8F1;}
 .log-time{font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--slate); margin-top:3px;}
 .log-channel{font-size:11px; font-weight:700; color:var(--rust); text-transform:uppercase; letter-spacing:.03em;}
 
+/* No-smartphone banner */
+.banner{
+  display:flex; align-items:center; gap:14px; background:#FBF0D9; border:1px solid var(--wheat-dark);
+  border-radius:10px; padding:14px 18px; margin-bottom:24px;
+}
+.banner-icon{font-size:20px;}
+.banner-text{flex:1; font-size:13.5px; line-height:1.5;}
+.banner-text strong{display:block; font-size:14px; margin-bottom:2px;}
+.tollfree{font-family:'JetBrains Mono',monospace; font-weight:600;}
+.badge-soon{
+  background:var(--soil); color:var(--paper); font-size:11px; font-weight:700;
+  padding:5px 11px; border-radius:999px; white-space:nowrap; text-transform:uppercase; letter-spacing:.03em;
+}
+
+/* Scan button */
+.btn-scan{
+  background:var(--leaf-light); color:var(--leaf); border:1.5px dashed var(--leaf);
+  width:100%; margin-bottom:6px;
+}
+.btn-scan:disabled{opacity:.6; cursor:wait;}
+.scan-confirm{font-size:12.5px; color:var(--leaf); font-weight:600; margin-bottom:10px;}
+.scan-warning{font-size:12.5px; color:var(--amber); font-weight:600; margin-bottom:10px;}
+
+/* Checkbox row (tractor pooling) */
+.checkbox-row{
+  display:flex; align-items:center; gap:9px; margin:18px 0 6px; font-size:14px; cursor:pointer;
+}
+.checkbox-row input{width:17px; height:17px; accent-color:var(--leaf); cursor:pointer;}
+
+/* Crop photo pre-check */
+input[type=file]{
+  width:100%; padding:9px 10px; border:1.5px dashed var(--line); border-radius:7px;
+  font-family:'Work Sans',sans-serif; font-size:13.5px; background:#FEFDFB; cursor:pointer;
+}
+.photo-note{font-size:12px; color:var(--slate); margin-top:5px;}
+.photo-preview{
+  display:block; margin-top:10px; max-width:160px; max-height:160px; border-radius:8px;
+  border:1.5px solid var(--line); object-fit:cover;
+}
+
+/* Scan overlay */
+.scan-overlay{
+  position:fixed; inset:0; background:rgba(59,42,30,0.75); z-index:999;
+  display:flex; align-items:center; justify-content:center;
+}
+.scan-modal{
+  background:var(--card); border-radius:14px; padding:32px 34px; text-align:center;
+  width:260px; box-shadow:0 20px 50px rgba(0,0,0,0.3);
+}
+.scan-modal.wide{ width:340px; }
+.scan-card-frame{
+  position:relative; width:100%; height:140px; background:#EFE7D6; border-radius:10px;
+  border:2px solid var(--wheat-dark); overflow:hidden; padding:14px; box-sizing:border-box;
+  display:flex; gap:10px; transition:border-color .3s;
+}
+.scan-card-frame.camera-frame{ padding:0; height:220px; background:#000; }
+.scan-card-frame.scan-success{border-color:var(--leaf);}
+.scan-card-frame.scan-partial{border-color:var(--amber);}
+.scan-photo-box{
+  width:38px; height:48px; background:#D8CCB4; border-radius:4px; flex-shrink:0; margin-top:4px;
+}
+.scan-card-lines{display:flex; flex-direction:column; gap:9px; justify-content:center; flex:1;}
+.scan-card-lines div{height:8px; background:#D8CCB4; border-radius:3px;}
+.scan-card-lines div:nth-child(1){width:85%;}
+.scan-card-lines div:nth-child(2){width:65%;}
+.scan-card-lines div:nth-child(3){width:75%;}
+#scan-video{ width:100%; height:100%; object-fit:cover; }
+.scan-captured{ padding:0; height:180px; background:#000; }
+.scan-captured-img{ width:100%; height:100%; object-fit:cover; display:block; }
+.scan-line{
+  position:absolute; left:0; right:0; height:3px; background:var(--leaf);
+  box-shadow:0 0 8px 2px rgba(47,82,51,0.6);
+  animation:scanmove 1.1s ease-in-out infinite;
+}
+@keyframes scanmove{
+  0%{ top:6%; }
+  50%{ top:88%; }
+  100%{ top:6%; }
+}
+.scan-status{margin-top:16px; font-size:14px; font-weight:600; color:var(--soil);}
+.scan-progress{
+  margin-top:12px; height:5px; background:var(--line); border-radius:99px; overflow:hidden;
+}
+.scan-progress-fill{
+  height:100%; width:0%; background:var(--leaf); border-radius:99px;
+  transition:width 2s linear;
+}
+.scan-actions{ display:flex; gap:10px; margin-top:16px; }
+.scan-actions .btn{ flex:1; }
+.scan-error{
+  font-size:14px; color:var(--rust); background:var(--rust-light); border-radius:8px;
+  padding:16px; line-height:1.5; text-align:left;
+}
+.scan-btn-row{ display:flex; gap:8px; margin-bottom:6px; }
+.scan-btn-row .btn{ flex:1; }
+.btn-scan-alt{
+  background:var(--card); color:var(--soil); border:1.5px solid var(--line);
+}
+
+/* Extra info on token confirmation card */
+.token-extra{
+  margin-top:14px; padding-top:14px; border-top:1px dashed #5A4736;
+  font-size:13px; color:#E7DFCF; text-align:left;
+}
+
 .stat-row{display:flex; gap:14px; margin-bottom:24px;}
 .stat{flex:1; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px 18px;}
 .stat .n{font-family:'Roboto Slab',serif; font-size:26px; font-weight:700;}
