@@ -17,3 +17,6 @@ We build this prototype for smart India hackathon . Where we firstly selected th
 - Aparna
 - Palak
 - Sachin
+
+## Prototype is live
+link - https://codecrafter-sih-2026.netlify.app/
